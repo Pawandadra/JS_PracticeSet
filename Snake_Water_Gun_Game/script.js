@@ -1,10 +1,11 @@
 const random_no = (max) => {
     return Math.floor(Math.random() * max)
   }
-  let cpu
+
+  let comp
   const getCpuChoice =() =>{
-    cpu = random_no(3)
-    switch(cpu){ 
+    comp = random_no(3)
+    switch(comp){ 
       case 0:
         return "S"
       case 1:
@@ -18,7 +19,7 @@ const random_no = (max) => {
   let user
   let choice
   do{
-    cpu = getCpuChoice(cpu)
+    cpu = getCpuChoice(comp)
     user = prompt("Enter S, W or G").toUpperCase()
 
     if (user == "S" && cpu == "W" || user == "W" && cpu == "G" || user == "G" && cpu == "S"){
@@ -29,10 +30,10 @@ const random_no = (max) => {
       alert("You lose!!")
     }
    
-    else if (user == "S" && cpu == 0 || user == "W" && cpu == 1 || user == "G" && cpu == 2){
+    else if (user === cpu){
       alert("Both have same choices.")
     }
-    
+
     else{
       alert("Invalid choice.")
     }
