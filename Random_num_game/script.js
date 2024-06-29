@@ -1,3 +1,10 @@
+
+function handleInput() {
+   const userInput = document.getElementById('userInput');
+
+}
+const inputValue = userInput.value;
+
 const getRandomNum = (max) => {
    return Math.floor(Math.random() * max)
 }
@@ -5,25 +12,23 @@ const getRandomNum = (max) => {
 let random_num = getRandomNum(100)
 random_num = Number.parseInt(random_num)
 
-let inpNum
 let tries = 0
 
 do {
-   inpNum = prompt("Guess the random number (between 0-100) : ");
-   inpNum = Number.parseInt(inpNum);
+   inputValue = Number.parseInt(inputValue);
    tries++
    
-   if (inpNum > random_num){
-   alert("Your guess is greater than random number. Please try again !!")
+   if (inputValue > random_num){
+   ("Your guess is greater than random number. Please try again !!")
    }  
-   else if (inpNum < random_num){
-      alert("Your guess is smaller than random number. Please try again !!")
+   else if (inputValue < random_num){
+      ("Your guess is smaller than random number. Please try again !!")
    } 
-   else if (inpNum == random_num){
-      alert("Congratulations !! You guessed the correct Number.\n Your Score is : "+ (101-tries))
+   else if (inputValue == random_num){
+      ("Congratulations !! You guessed the correct Number.\n Your Score is : "+ (101-tries))
       break
    } 
    else {
-      alert("You entered invalid data. Please try again !!")
+      ("You entered invalid data. Please try again !!")
    }
-} while (inpNum !== random_num);
+} while (inputValue !== random_num);
